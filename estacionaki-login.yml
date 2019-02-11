@@ -1,5 +1,17 @@
 server:
   port: 8080
 
-spring.data.mongodb.database: estacionaki
-spring.data.mongodb.uri: mongodb://localhost:2701
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2_console
+  datasource:
+    url: jdbc:h2:file:~/h2/estacionakidb
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
